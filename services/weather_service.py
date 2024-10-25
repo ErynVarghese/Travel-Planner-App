@@ -1,8 +1,9 @@
 # services/weather_service.py
 import requests
+from config import OPENWEATHERMAP_API_KEY
 
-def get_weather(destination, api_key):
-    weather_url = f'https://api.openweathermap.org/data/2.5/weather?q={destination}&appid={api_key}&units=metric'
+def get_weather(destination):
+    weather_url = f'https://api.openweathermap.org/data/2.5/weather?q={destination}&appid={OPENWEATHERMAP_API_KEY}&units=metric'
     
     # Request weather data
     try:

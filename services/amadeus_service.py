@@ -1,12 +1,13 @@
 # services/amadeus_service.py
 import requests
+from config import AMADEUS_API_KEY
 
-def get_flights_and_hotels(departure, destination, start_date, end_date, api_key):
+def get_flights_and_hotels(departure, destination, start_date, end_date):
     
     flight_url = f'https://test.api.amadeus.com/v1/shopping/flight-offers?origin={departure}&destination={destination}&departureDate={start_date}&returnDate={end_date}'
     hotel_url = f'https://test.api.amadeus.com/v1/shopping/hotel-offers?cityCode={destination}&checkInDate={start_date}&checkOutDate={end_date}'
     
-    headers = {"Authorization": f"Bearer {api_key}"}
+    headers = {"Authorization": f"Bearer {AMADEUS_API_KEY}"}
     
     # Request flight data
     try:
